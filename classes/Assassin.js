@@ -33,7 +33,6 @@ class Assassin extends Character {
       this.mana -= 20;
       this.invincible = true;
       this.attackedVictim = victim;
-      console.log(this)
 		}
 	}
 
