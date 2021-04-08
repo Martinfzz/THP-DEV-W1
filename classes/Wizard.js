@@ -1,5 +1,5 @@
 class Wizard extends Character {
-  constructor(name, hp = 10, dmg = 2, mana = 200, status = "playing", shield = 0, invicible = false) {
+  constructor(name, hp = 10, dmg = 2, mana = 100, status = "playing", shield = 0, invicible = false) {
     super(hp, dmg, mana, status, shield, invicible);
     this.name = name;
   }
