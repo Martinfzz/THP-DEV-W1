@@ -9,10 +9,13 @@ class Monk extends Character {
 	}
 
 	heal = (victim) => {
+    console.log("%cSpecial attack: Heal!", 'color: purple');
 		if (this.mana >= 25 && this.dealDamage(this.dmg, victim)) {
-			console.log("Special attack: Heal!");
+      console.log("%cSpecial attack: Success!", 'color: green');
       this.hp += 8;
       this.mana -= 25;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 }

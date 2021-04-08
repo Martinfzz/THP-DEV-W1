@@ -9,9 +9,12 @@ class Wizard extends Character {
 	}
 
 	fireball = (victim) => {
+    console.log("%cSpecial attack: Fireball!", 'color: purple');
 		if (this.mana >= 25 && this.dealDamage(7, victim)) {
-			console.log("Special attack: Fireball!");
+      console.log("%cSpecial attack: Success!", 'color: green');
 			this.mana -= 25;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 }

@@ -10,12 +10,12 @@ class Assassin extends Character {
     if (!this.attackedVictim) {
 			return;
 		}
-
+    console.log(`%cShadow Hit: Success!`, 'color: green');
     this.dealDamage(7, this.attackedVictim);
 		this.invincible = false;
 
 		if (this.attackedVictim.isAlive()) {
-			console.log(`Shadow hit failed!`);
+			console.log(`%cShadow Hit: Failed!`, 'color: red');
 			this.hp -= 7;
       this.isDead(this);
 		}
@@ -28,12 +28,15 @@ class Assassin extends Character {
 	}
 
 	shadowHit = (victim) => {
+    console.log("%cSpecial attack: Shadow Hit!", 'color: purple');
 		if (this.mana >= 20 && this.dealDamage(0, victim)) {
-			console.log("Special attack: Shadow Hit!");
+      console.log("%cSpecial attack: Success!", 'color: green');
       this.mana -= 20;
       this.invincible = true;
       this.attackedVictim = victim;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 
 }

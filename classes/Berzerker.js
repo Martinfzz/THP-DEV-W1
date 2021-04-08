@@ -9,10 +9,13 @@ class Berzerker extends Character {
 	}
 
 	rage = (victim) => {
+    console.log("%cSpecial attack: Rage!", 'color: purple');
 		if (this.hp >= 2 && this.dealDamage(this.dmg + 1, victim)) {
-			console.log("Special attack: Rage!");
+      console.log("%cSpecial attack: Success!", 'color: green');
 			this.dmg += 1;
       this.hp -= 1;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 }

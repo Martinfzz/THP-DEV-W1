@@ -12,7 +12,7 @@ class Character {
 
   takeDamage = (damage) => {
 		if (this.status !== 'playing') {
-			console.log(`WTF Bro?! I'm not playing!`);
+			console.log(`%cWTF Bro?! I'm not playing!`, 'color: purple');
 			return 0;
 		}
 
@@ -25,19 +25,18 @@ class Character {
 
   dealDamage = (damage, victim) => {
 		if (victim.status !== 'playing') {
-			console.log(`${victim.name} is not playing.`);
+			console.log(`%c${victim.name} is not playing.`, 'color: blue');
 			return false;
 		}
 
     if (victim.invincible) {
-			console.log(`${victim.name} is invincible!`);
+			console.log(`%c${victim.name} is invincible!`, 'color: blue');
 			return false;
 		}
 
-    console.log("--------------")
-		console.log(`${this.name} attacks ${victim.name}!`);
+		console.log(`%c${this.name} attacks ${victim.name}!`, 'color: green');
 		const givenDamage = victim.takeDamage(damage);
-		console.log(`${this.name} deals ${givenDamage} damages to ${victim.name}. ${victim.name} got ${victim.hp} lifepoints left.`);
+		console.log(`%c${this.name} deals ${givenDamage} damages to ${victim.name}. ${victim.name} got ${victim.hp} lifepoints left.`, 'color: blue');
 
     this.isDead(victim);
 
@@ -64,7 +63,7 @@ class Character {
     if (victim.hp <= 0) {
 			victim.hp = 0;
 			victim.status = 'loser';
-			console.log(`${victim.name} is dead!`);
+			console.log(`%c${victim.name} is dead!`, 'color: red');
 		}
   }
 

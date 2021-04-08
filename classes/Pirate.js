@@ -9,9 +9,12 @@ class Pirate extends Character {
 	}
 
 	pistol = (victim) => {
+    console.log("%cSpecial attack: Pistol!", 'color: purple');
 		if (this.mana >= 20 && this.dealDamage(5, victim)) {
-			console.log("Special attack: Pistol!");
+      console.log("%cSpecial attack: Success!", 'color: green');
 			this.mana -= 20;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 }

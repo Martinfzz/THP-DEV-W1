@@ -9,10 +9,13 @@ class Fighter extends Character {
 	}
 
 	darkVision = (victim) => {
+    console.log("%cSpecial attack: Dark vision!", 'color: purple');
 		if (this.mana >= 20 && this.dealDamage(5, victim)) {
-			console.log("Special attack: Dark vision!");
+      console.log("%cSpecial attack: Success!", 'color: green');
 			this.mana -= 20;
       this.shield += 2;
-		}
+		} else {
+      console.log("%cSpecial attack: Failed!", 'color: red');
+    }
 	}
 }

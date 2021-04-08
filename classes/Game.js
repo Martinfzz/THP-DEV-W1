@@ -16,8 +16,8 @@ class Game {
 
 	watchStats = () => {
 		this.playerList.map((player) => {!player.isAlive() ? 
-                                      console.log(`${player.name} is dead`) : 
-                                      console.log(`${player.name}: ${player.hp} hp, ${player.dmg} dmg, ${player.mana} mana.`);
+                                      console.log(`%c${player.name} is dead`, 'color: red') : 
+                                      console.log(`%c${player.name}: hp: ${player.hp}, dmg: ${player.dmg}, mana: ${player.mana}, invincible: ${player.invincible}, shield: ${player.shield}.`, 'color: green');
       }
     );
 	}
